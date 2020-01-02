@@ -1,0 +1,38 @@
+body {
+    font-family: Roboto, Courier New, Monospace;
+    font-size: 15px;
+}
+header h1 {
+    margin: 0px;
+}
+header strong {
+    color: #8b8989;
+}
+article h2 {
+    margin: 25px 0px 10px 0px;
+}
+section p,h3 {
+    margin: 0;
+    padding: 0;
+}
+section.event {
+    padding: 10px 0px 10px 0px;
+}
+section.event .event-name,.event-addr {
+    display:flex;
+}
+section.event .event-name time {
+    padding-top: 3px;
+    padding-left: 25px;
+    color: #cdc9c9;
+}
+section.event .event-addr .website {
+    margin-top:-10px;
+    margin-left: 15px;
+    padding-left: 5px;
+    /* border-left: 1px solid black; */
+}
+
+section.event .event-addr .website img {
+    height: 20px;
+}
