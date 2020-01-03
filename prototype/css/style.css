@@ -1,38 +1,98 @@
-body {
-    font-family: Roboto, Courier New, Monospace;
-    font-size: 15px;
+@font-face {
+  font-family: codeNewRomanFont;
+  src: url(codenewroman.woff2) format("woff2");
 }
+
+@font-face {
+  font-family: albaFont;
+  src: url(alba.woff2) format("woff2");
+}
+
+body {
+    font-family: codeNewRomanFont, Courier New, Monospace;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 55%;
+    margin: auto;
+}
+
+header {
+    background-color: black;
+    color: white;
+}
+
+header .container {
+    padding: 5px;
+}
+
 header h1 {
     margin: 0px;
+    font-family: albaFont;
+    font-size: 3em;
 }
-header strong {
-    color: #8b8989;
+
+header .subheader {
+    font-size: .9em;
 }
+
 article h2 {
     margin: 25px 0px 10px 0px;
 }
+
+section.event {
+    padding: 5px 0px 5px 0px;
+}
+
 section p,h3 {
     margin: 0;
     padding: 0;
 }
-section.event {
-    padding: 10px 0px 10px 0px;
-}
-section.event .event-name,.event-addr {
-    display:flex;
-}
-section.event .event-name time {
-    padding-top: 3px;
-    padding-left: 25px;
-    color: #cdc9c9;
-}
-section.event .event-addr .website {
-    margin-top:-10px;
-    margin-left: 15px;
-    padding-left: 5px;
-    /* border-left: 1px solid black; */
-}
 
 section.event .event-addr .website img {
     height: 20px;
+}
+
+.icons {
+    display: flex;
+    margin-top: 8px;
+}
+
+.icon {
+    margin-right: 20px;
+    height: 25px;
+}
+
+@media only screen and (max-width: 640px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    section.event .event-name,.event-addr {
+        display:flex;
+    }
+
+    section.event .event-addr .website {
+        margin-left: 15px;
+        padding-left: 5px;
+    }
+
+    .icons {
+        margin: 0px;
+        margin-top: -5px;
+    }
+
+    .icon {
+        margin-left: 20px;
+        margin-right: 0px;
+        height: 20px;
+    }
+
 }

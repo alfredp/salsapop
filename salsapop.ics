@@ -1,0 +1,83 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//salsapop.com//calendar salsa-bachata-etc//EN
+
+BEGIN:VTIMEZONE
+TZID:America/New_York
+LAST-MODIFIED:20050809T050000Z
+TZURL:http://zones.example.com/tz/America-New_York.ics
+BEGIN:STANDARD
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+TZOFFSETFROM:-0400
+TZOFFSETTO:-0500
+TZNAME:EST
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+TZOFFSETFROM:-0500
+TZOFFSETTO:-0400
+TZNAME:EDT
+END:DAYLIGHT
+END:VTIMEZONE
+
+BEGIN:VEVENT
+UID:040cb86a-4f09-4d09-bd87-3a8f2007588a
+SUMMARY:3rd Street Promenade
+LOCATION:3rd Street Promenade\, Santa Monica\, CA 90401
+URL:https://www.meetup.com/The-Santa-Monica-Salsa-Meetup-Group-Salsa-Familia
+DTSTART:20200106T040000Z
+RRULE:FREQ=WEEKLY;BYDAY=MO
+END:VEVENT
+
+BEGIN:VEVENT
+UID:54283b08-2700-11ea-8309-1bd0789fe8e8
+DTSTART:20191223T220000Z
+SUMMARY:The Lighthouse Cafe
+LOCATION:The Lighthouse Cafe\, 30 Pier Avenue\, Hermosa Beach\, CA 90254
+URL:https://www.thelighthousecafe.net/live-music-calendar?
+ category=Salsa+Night
+END:VEVENT
+
+BEGIN:VEVENT
+UID:8740a696-2701-11ea-80e9-7f1041d1e06d
+DTSTART:20200101T210000Z
+SUMMARY:Groove Lounge
+LOCATION:Oxygen Tango\, 122 S Market St\, Inglewood\, CA 90301
+URL:https://www.facebook.com/GrooveLoungeMambo
+END:VEVENT
+
+BEGIN:VEVENT
+UID:d0d04a2e-3d2a-49ca-b3ab-73954205507c
+DTSTART:20191230T210000Z
+SUMMARY:3 Vinos Bachata Mondays
+LOCATION:3 Vinos\, 201 North Citrus Avenue\, Covina\, CA 91723
+URL:https://3vinos.com/live-entertainment
+END:VEVENT
+
+BEGIN:VEVENT
+UID:b17d29f8-91f0-4da3-94e6-2793f3830005
+DTSTART:20191230T210000Z
+SUMMARY:El Floridita
+LOCATION:El Floridita\, 1253 N Vine St\, Hollywood\, CA 90038
+URL:https://www.elfloridita.com/live-events
+END:VEVENT
+
+BEGIN:VEVENT
+UID:19f6c1b9-5874-4afb-a317-3a42895eef2f
+DTSTART:20191230T210000Z
+SUMMARY:Gramercy
+LOCATION:Gramercy\, 2460 Wilshire Blvd\, Santa Monica\, CA 90403
+URL:https://www.facebook.com/rumbapromo
+END:VEVENT
+
+BEGIN:VEVENT
+UID:444ac13a-c163-4474-9450-ece2747053cb
+DTSTART:20191230T210000Z
+SUMMARY:PCH Club
+LOCATION:Golden Sails Hotel\, 6285 E Pacific Coast Highway\, Long Beach\, CA 90803
+URL:http://www.salsainlongbeach.com/calendar.php
+END:VEVENT
+
+END:VCALENDAR

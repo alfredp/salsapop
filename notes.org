@@ -1,0 +1,92 @@
+#+title: salsapop notes
+#+STARTUP: showall
+
+* design
+** tools
+- iCal reader and validator CLI tool
+- flat file website generator
+  - HTML files generated from iCal files
+- website scraper
+  - input is a URL and output is iCal data
+
+** webpage design
+- h1 salsapop
+  - h2 day name
+    - h3 venue name
+      - p address
+
+* TODO [0/1]
+- [ ] web hosting
+- [ ] https certificate
+
+* tech links
+- https://github.com/ical4j/ical4j
+- https://icalendar.org/
+- https://tools.ietf.org/html/rfc5545
+
+* event links
+- https://www.facebook.com/pg/SalserosLA/events
+- https://www.facebook.com/LatinNightsAtBogies
+- https://www.facebook.com/pg/CieloDanceEvents/events
+- https://www.facebook.com/pg/UnifiedOn2Project
+- https://www.meetup.com/Salsa-Bachata-Dance-OC
+- https://www.meetup.com/Salsa-Land-Monsoon-Long-Beach-Social-Dancing/
+- https://www.meetup.com/salsafuego
+- https://www.facebook.com/pg/Dj-Roger-Rumba-594429317659787/events
+- http://alpinevillagecenter.com/events-2/
+- https://www.facebook.com/pg/salseros4life/events
+  - https://www.facebook.com/RanKanKanThursdays
+- https://www.facebook.com/Salsa-Lessons-At-Stevens-Steak-House-222816644395958
+- https://www.elfloridita.com/live-events/
+- https://3vinos.com/live-entertainment/
+- https://www.meetup.com/The-Santa-Monica-Salsa-Meetup-Group-Salsa-Familia
+- https://www.facebook.com/rumbafridaysla/
+- https://www.facebook.com/groups/lasalsa/
+- https://www.facebook.com/pg/djjimmyrumba/events
+- https://www.facebook.com/groups/salsa805
+- https://www.facebook.com/3rdstreetdance/
+
+* TODOs
+
+** TODO create iCal file reader [0/2]
+- [ ] groovy program
+- [ ] create recurring event ics file
+  - [ ] 3rd st. promenade
+  - [ ] alpine village
+  - [ ] blen blen
+  - [ ] bogies
+  - [ ] chinaland
+  - [ ] la clave
+  - [ ] el floridita
+  - [ ] fuego
+  - [ ] gramercy
+  - [ ] the granada
+  - [ ] groove lounge
+  - [ ] ixtapa
+  - [ ] legacy
+  - [ ] the lighthouse cafe
+  - [ ] mambo nights
+  - [ ] mambo outlet
+  - [ ] mejico grill
+  - [ ] oc salsa
+  - [ ] el pollo inka
+  - [ ] pch club
+    - [ ] monday
+    - [ ] thursday
+  - [ ] rain
+  - [ ] senator jones
+  - [ ] sonata room
+  - [ ] steven's steakhouse
+  - [ ] tres vinos
+    - [ ] bachata monday
+    - [ ] salsa wednesday
+  - [ ] unifiedon2
+  - [ ] v lounge
+  - [ ] the warehouse
+
+** TODO create HTML generator [0/3]
+- [ ] generate 365 days
+- [ ] generate 52 weeks
+- [ ] per event per day
+
+** TODO create website scraper
