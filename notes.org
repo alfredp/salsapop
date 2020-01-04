@@ -15,6 +15,20 @@
     - h3 venue name
       - p address
 
+** ics template
+
+:ics_template:
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:
+SUMMARY:
+LOCATION:
+URL:
+DTSTART;TZID=Pacific:
+RRULE:FREQ=WEEKLY;BYDAY=SU
+END:VEVENT
+:ics_template:
+
 * TODO [0/1]
 - [ ] web hosting
 - [ ] https certificate
@@ -45,48 +59,59 @@
 - https://www.facebook.com/pg/djjimmyrumba/events
 - https://www.facebook.com/groups/salsa805
 - https://www.facebook.com/3rdstreetdance/
+- https://www.facebook.com/SBSalsaNBachata
+- https://oxnardsalsafestival.com/learn-to-dance/
+- https://www.facebook.com/pg/CPSalsa/events
+- http://www.letsdancesp.com/
+- https://www.facebook.com/worldsalsafest
+- https://www.facebook.com/salsanightsatcliftons/
+- https://www.facebook.com/salsaandbachatanights/
+- https://www.meetup.com/Salsa-Caliente
+- https://www.facebook.com/pg/mambonightsla
 
 * TODOs
 
 ** TODO create iCal file reader [0/2]
-- [ ] groovy program
-- [ ] create recurring event ics file
-  - [ ] 3rd st. promenade
-  - [ ] alpine village
-  - [ ] blen blen
-  - [ ] bogies
+- [-] create recurring event ics file [20/33]
+  - [X] 3 Vinos
+  - [X] 3rd st. promenade
+  - [X] alpine village
+  - [X] blen blen
+  - [X] bogies
   - [ ] chinaland
-  - [ ] la clave
-  - [ ] el floridita
-  - [ ] fuego
-  - [ ] gramercy
-  - [ ] the granada
-  - [ ] groove lounge
-  - [ ] ixtapa
-  - [ ] legacy
-  - [ ] the lighthouse cafe
+  - [X] la clave
+  - [X] el floridita
+  - [X] fuego
+  - [X] gramercy
+  - [X] the granada
+  - [X] groove lounge
+  - [X] ixtapa
+  - [ ] iesocial
+  - [X] legacy
+  - [X] the lighthouse cafe
   - [ ] mambo nights
-  - [ ] mambo outlet
-  - [ ] mejico grill
-  - [ ] oc salsa
-  - [ ] el pollo inka
-  - [ ] pch club
-    - [ ] monday
-    - [ ] thursday
+  - [X] mambo outlet
+  - [X] the matrix santa barbara
+  - [X] mejico grill
+  - [X] oc salsa
+  - [X] el pollo inka
+  - [X] pch club
+    - [X] monday
+    - [X] thursday
   - [ ] rain
   - [ ] senator jones
+  - [ ] Schooner Bar & Grill
   - [ ] sonata room
   - [ ] steven's steakhouse
-  - [ ] tres vinos
-    - [ ] bachata monday
-    - [ ] salsa wednesday
+  - [ ] third street dance
   - [ ] unifiedon2
   - [ ] v lounge
   - [ ] the warehouse
+- [ ] groovy program
 
 ** TODO create HTML generator [0/3]
-- [ ] generate 365 days
-- [ ] generate 52 weeks
-- [ ] per event per day
+- [ ] generate 90 days
+- [ ] generate 26 weeks
+- [ ] per event per day for 90 days
 
 ** TODO create website scraper
