@@ -24,9 +24,9 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:06cabbc7-d4f2-4526-8a12-026f63a5c2c2
 DTSTAMP:20200104T032923Z
-SUMMARY:3 Vinos
+SUMMARY:3 Vino's
 DESCRIPTION:Bachata Mondays\, Salsa Wednesdays
-LOCATION:3 Vinos\, 201 North Citrus Ave\, Covina\, CA 91723
+LOCATION:3 Vino's\, 201 North Citrus Ave\, Covina\, CA 91723
 URL:https://3vinos.com/live-entertainment
 DTSTART;TZID=Pacific:20200101T213000
 RRULE:FREQ=WEEKLY;BYDAY=MO,TH
