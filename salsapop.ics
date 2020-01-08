@@ -29,13 +29,14 @@ DESCRIPTION:Bachata Mondays\, Salsa Wednesdays
 LOCATION:3 Vino's\, 201 North Citrus Ave\, Covina\, CA 91723
 URL:https://3vinos.com/live-entertainment
 DTSTART;TZID=Pacific:20200101T213000
-RRULE:FREQ=WEEKLY;BYDAY=MO,TH
+RRULE:FREQ=WEEKLY;BYDAY=MO,WE
 END:VEVENT
 
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:040cb86a-4f09-4d09-bd87-3a8f2007588a
 SUMMARY:3rd Street Promenade
+DESCRIPTION: Dancing in the street!
 LOCATION:3rd Street Promenade\, Santa Monica\, CA 90401
 URL:https://www.meetup.com/The-Santa-Monica-Salsa-Meetup-Group-Salsa-Familia
 DTSTART;TZID=Pacific:20200105T200000
@@ -67,6 +68,7 @@ BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:ced88acf-76f1-4342-836d-c4a5ddd4a5c3
 SUMMARY:Bogie's
+DESCRIPTION:Latin Wednesday
 LOCATION:Bogie's\, 32001 Agoura Rd\, Westlake Village\, CA 91361
 URL:https://www.facebook.com/LatinNightsAtBogies
 DTSTART;TZID=Pacific:20200108T210000
@@ -107,6 +109,7 @@ BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:c2ec329d-3598-4847-a337-3920b3ea1b72
 SUMMARY:Gramercy
+DESCRIPTION:Salsa & Bachata Mondays
 LOCATION:Gramercy\, 2460 Wilshire Blvd\, Santa Monica\, CA 90403
 URL:https://www.facebook.com/rumbapromo
 DTSTART;TZID=Pacific:20200106T213000
@@ -137,7 +140,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:3bdf63dd-9c01-417d-951c-ab177fa27bb4
-SUMMARY:Salsa & Bachata Tuesdays @ Ixtapa Lounge
+SUMMARY:Ixtapa Lounge
+DESCRIPTION: Salsa & Bachata Tuesdays
 LOCATION:Ixtapa Lounge\, 119 E Colorado Blvd\, Pasadena\, CA 91105
 URL:https://www.facebook.com/events/993355044355926
 DTSTART;TZID=Pacific:20200107T213000
@@ -147,7 +151,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:9fb9156d-b2a2-4ece-96bd-00fd090aa04f
-SUMMARY:Salsa & Bachata Night @ Legacy
+SUMMARY:Legacy
 DESCRIPTION:50/50 salsa to bachata
 LOCATION:Legacy\, 4647 MacArthur Blvd\, Newport Beach\, CA 92660
 URL:https://www.facebook.com/pg/CieloDanceEvents/events
@@ -168,7 +172,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:be3b3539-c55d-4cdb-a7a5-346c92ae49ad
-SUMMARY:Salsa Night @ The Lighthouse Cafe
+SUMMARY:The Lighthouse Cafe
+DESCRIPTION:Salsa Night
 LOCATION:The Lighthouse Cafe\, 30 Pier Avenue\, Hermosa Beach\, CA 90254
 URL:https://www.thelighthousecafe.net/live-music-calendar
 DTSTART;TZID=Pacific:20200106T220000
@@ -189,7 +194,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:922c6b06-5c5d-413d-8ba1-651286547ff0
-SUMMARY:Santa Barbara Salsa & Bachata Nights
+SUMMARY:Matrix Nigthclub
+DESCRIPTION:Santa Barbara Salsa & Bachata Nights
 LOCATION:Matrix Nightclub & Lounge\, 409 State St\, Santa Barbara\, CA 93101
 URL:https://www.facebook.com/events/2449658148685549
 DTSTART;TZID=Pacific:20200103T210000
@@ -199,7 +205,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:c3c2e701-27fa-4bb3-a9ad-7f53e920069b
-SUMMARY:Latin Saturdays @ Mejico Grill
+SUMMARY:Mejico Grill
+DESCRIPTION:Latin Saturdays
 LOCATION:Mejico Grill & Tequila Lounge\, 29008 Ago
  ura Rd\, Agoura Hills\, CA 91301
 URL:https://www.facebook.com/pg/SalserosLA/events
@@ -210,7 +217,8 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:cfffc5e5-e574-45d8-b335-87ad89c16204
-SUMMARY:Friday Salsa Nights by OC Salsa
+SUMMARY:OC Salsa
+DESCRIPTION:Friday Salsa Nights
 LOCATION:DanScene Dance Studio\, 2980 McClintock Way Ste A\, Costa Me
  sa\, CA 92626
 URL:http://estebanconde.com/calendar
@@ -232,6 +240,7 @@ BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:2e1153af-a17c-4124-815c-3d4b471a17d6
 SUMMARY:PCH Club
+DESCRIPTION:SalsaInLongBeach
 LOCATION:Golden Sails Hotel\, 6285 E Pacific Coast Hwy\, Long Be
  ach\, CA 90803
 URL:https://www.facebook.com/salsainlongbeach

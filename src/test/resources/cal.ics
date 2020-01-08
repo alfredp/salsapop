@@ -28,7 +28,8 @@ SUMMARY:3 Vinos
 DESCRIPTION:Bachata Mondays\, Salsa Wednesdays
 LOCATION:3 Vinos\, 201 North Citrus Ave\, Covina\, CA 91723
 URL:https://3vinos.com/live-entertainment
-DTSTART;TZID=Pacific:20200101T213000
+DTSTART;TZID=Pacific:20200106T213000
+RDATE;TZID=Pacific:20200106T213000
 RRULE:FREQ=WEEKLY;BYDAY=MO,TH
 END:VEVENT
 

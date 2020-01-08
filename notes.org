@@ -72,7 +72,7 @@ END:VEVENT
 * TODOs
 
 ** TODO create iCal file reader [0/2]
-- [-] create recurring event ics file [20/33]
+- [-] create recurring event ics file [20/34]
   - [X] 3 Vinos
   - [X] 3rd st. promenade
   - [X] alpine village
@@ -88,6 +88,7 @@ END:VEVENT
   - [X] ixtapa
   - [ ] iesocial
   - [X] legacy
+  - [ ] lumina academy 2nd friday social
   - [X] the lighthouse cafe
   - [ ] mambo nights
   - [X] mambo outlet
@@ -107,6 +108,7 @@ END:VEVENT
   - [ ] unifiedon2
   - [ ] v lounge
   - [ ] the warehouse
+  - [ ] zoukchata
 - [ ] groovy program
 
 ** TODO create HTML generator [0/3]

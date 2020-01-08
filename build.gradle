@@ -1,6 +1,7 @@
 plugins {
     id 'groovy'
     id 'application'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
 }
 
 repositories {
@@ -21,6 +22,5 @@ dependencies {
 }
 
 application {
-    // Define the main class for the application.
-    //mainClassName = 'com.salsapop.App'
+    mainClassName = 'com.salsapop.Entry'
 }
