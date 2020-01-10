@@ -29,6 +29,12 @@ RRULE:FREQ=WEEKLY;BYDAY=SU
 END:VEVENT
 :ics_template:
 
+* python server
+
+#+BEGIN_SRC sh
+python3 -m http.server --bind 192.168.1.10 9000
+#+END_SRC
+
 * TODO [0/1]
 - [ ] web hosting
 - [ ] https certificate
@@ -112,7 +118,7 @@ END:VEVENT
 - [ ] groovy program
 
 ** TODO create HTML generator [0/3]
-- [ ] generate 90 days
+- [ ] generate 90 days<
 - [ ] generate 26 weeks
 - [ ] per event per day for 90 days
 

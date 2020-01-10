@@ -32,6 +32,6 @@ class UtilTest extends Specification {
         def aMonday = LocalDate.parse("2020-01-06")
 
         then:
-        Util.eventOccursOnDay(events[0] as VEvent, aMonday.toDate())
+        HtmlUtil.eventOccursOnDay(events[0] as VEvent, aMonday.toDate())
     }
 }

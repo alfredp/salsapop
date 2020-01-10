@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Salsapop! | Salsa Dancing in Los Angeles, Orange County, and Southern California!</title>
+    <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -14,7 +15,7 @@
 </header>
 <main>
     <%
-        for(day in days) {
+        for(day in util.eventDays) {
             day = day as java.time.LocalDate
     %>
     <article>
@@ -23,15 +24,17 @@
                 <h2>
                     ${day.format("EEEE")}
                 </h2>
+                <% if(util.printDates) { %>
                 <p class="date">
-                    <time datetime="${day.format("YYYY-MM-DD")}">${day.format("MMM DD")}</time>
+                    <time datetime="${day.format("YYYY-MM-dd")}">${day.format("MMM dd")}</time>
                 </p>
+                <% } %>
             </div>
             <%
-                    for(vevent in vevents) {
+                    for(vevent in util.events) {
                         vevent = vevent as net.fortuna.ical4j.model.component.VEvent
                         def encodedAddr = java.net.URLEncoder.encode(vevent.getLocation().getValue(), "UTF-8")
-                        if(com.salsapop.Util.eventOccursOnDay(vevent, day.toDate())) {
+                        if(com.salsapop.HtmlUtil.eventOccursOnDay(vevent, day.toDate())) {
             %>
             <section class="event">
                 <section class="event-name">
@@ -52,12 +55,12 @@
                         <div class="icons">
                             <div>
                                 <a target="_blank" href="${vevent.getUrl().getValue()}">
-                                    <img class="icon" alt="Website" src="images/link.svg">
+                                    <img class="icon" alt="Website" src="/images/link.svg">
                                 </a>
                             </div>
                             <div>
                                 <a target="_blank" href="https://www.google.com/maps?q=${encodedAddr}">
-                                    <img class="icon" alt="Website" src="images/map.svg">
+                                    <img class="icon" alt="Website" src="/images/map.svg">
                                 </a>
                             </div>
                         </div>
