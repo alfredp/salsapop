@@ -118,13 +118,24 @@ END:VEVENT
 
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
-UID:e80b1fdd-01a3-4146-920d-2bcbae2b3d6f
+UID:ea8fef26-91e5-404a-8fb2-b9a3ba413b95
 SUMMARY:The Granada
-DESCRIPTION:Bachata Thursdays\, Salsa & Bachata Fridays and Saturdays
+DESCRIPTION:Bachata Thursdays
 LOCATION:The Granada\, 17 S 1st St\, Alhambra\, CA 91801
 URL:https://www.instagram.com/thegranadala
 DTSTART;TZID=Pacific:20200102T213000
-RRULE:FREQ=WEEKLY;BYDAY=TH,FR,SA
+RRULE:FREQ=WEEKLY;BYDAY=TH
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:e80b1fdd-01a3-4146-920d-2bcbae2b3d6f
+SUMMARY:The Granada
+DESCRIPTION:Salsa & Bachata Fridays and Saturdays
+LOCATION:The Granada\, 17 S 1st St\, Alhambra\, CA 91801
+URL:https://www.instagram.com/thegranadala
+DTSTART;TZID=Pacific:20200103T213000
+RRULE:FREQ=WEEKLY;BYDAY=FR,SA
 END:VEVENT
 
 BEGIN:VEVENT

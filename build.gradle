@@ -22,5 +22,50 @@ dependencies {
 }
 
 application {
-    mainClassName = 'com.salsapop.Entry'
+    mainClassName = 'com.salsapop.cli.Entry'
+}
+
+ext {
+    defaultCalendar = "salsapop.ics"
+    htmlOutputRoot = "g_doc_root"
+}
+
+task generateHtml(type: JavaExec) {
+    dependsOn build
+    doFirst {
+        println "Purging ${htmlOutputRoot}..."
+        delete htmlOutputRoot
+        println "Creating ${htmlOutputRoot}..."
+        mkdir htmlOutputRoot
+    }
+    doLast {
+        copy {
+            from "prototype"
+            into htmlOutputRoot
+            exclude "**/*.html"
+        }
+    }
+    classpath = sourceSets.main.runtimeClasspath
+    main = application.mainClassName
+    args defaultCalendar,htmlOutputRoot
+}
+
+run.doFirst {
+    args[0] = "salsapop.ics"
+    args[1] = htmlOutputRoot
+}
+
+task makeSitemap {
+    doLast {
+        mkdir(htmlOutputRoot)
+        def f = file(htmlOutputRoot)
+        def o = file("${htmlOutputRoot}/sitemap.txt")
+        o.withWriter { w ->
+            f.eachFileRecurse { x ->
+                if (x.isFile() && x.getName().endsWith("html")) {
+                    w.println("http://www.salsapop.com/" + x.getName())
+                }
+            }
+        }
+    }
 }

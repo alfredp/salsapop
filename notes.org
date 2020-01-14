@@ -43,6 +43,8 @@ python3 -m http.server --bind 192.168.1.10 9000
 - https://github.com/ical4j/ical4j
 - https://icalendar.org/
 - https://tools.ietf.org/html/rfc5545
+- https://www.toptal.com/software/definitive-guide-to-datetime-manipulation
+- https://www.petrikainulainen.net/privacy-policy/
 
 * event links
 - https://www.facebook.com/pg/SalserosLA/events
@@ -74,14 +76,25 @@ python3 -m http.server --bind 192.168.1.10 9000
 - https://www.facebook.com/salsaandbachatanights/
 - https://www.meetup.com/Salsa-Caliente
 - https://www.facebook.com/pg/mambonightsla
+- https://www.facebook.com/MelomanoEnt/
+- https://www.facebook.com/619dancers/
+- https://www.thirdstreetdance.com/socials
+- https://www.facebook.com/events/aurea-vista/utopia-5050-salsa-bachata-wednesdays-at-aurea-vista/2100445433582152/
+- https://www.facebook.com/pg/Dj-Roger-Rumba-594429317659787/events
 
 * TODOs
 
+** TODO create HTML generator [3/3]
+- [X] generate 90 days
+- [X] generate 26 weeks
+- [X] per event per day for 90 days
+
 ** TODO create iCal file reader [0/2]
-- [-] create recurring event ics file [20/34]
+- [-] create recurring event ics file [20/35]
   - [X] 3 Vinos
   - [X] 3rd st. promenade
   - [X] alpine village
+  - [ ] anaheim gardenwalk
   - [X] blen blen
   - [X] bogies
   - [ ] chinaland
@@ -116,10 +129,5 @@ python3 -m http.server --bind 192.168.1.10 9000
   - [ ] the warehouse
   - [ ] zoukchata
 - [ ] groovy program
-
-** TODO create HTML generator [0/3]
-- [ ] generate 90 days<
-- [ ] generate 26 weeks
-- [ ] per event per day for 90 days
 
 ** TODO create website scraper

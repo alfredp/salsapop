@@ -35,8 +35,34 @@ header h1 {
     font-size: 3em;
 }
 
-header .subheader {
+header .tagline {
     font-size: .9em;
+    padding-left: 5px;
+}
+
+header .subheader {
+    background-color:#f5f5f5;
+    color:black;
+    font-size: 1.2em;
+}
+
+.week-box {
+    margin: 0px;
+    padding: 7px 0px 5px 0px;
+    background-color: #d3d3d3;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0px;
+    padding: 0px;
+}
+h2 a { color: black; text-decoration: none; }
+h2 a:active { color: black; }
+h2 a:visited { color: black; }
+
+article {
+    margin: 10px 0px 0px 0px;
 }
 
 article .day-box {
@@ -45,46 +71,63 @@ article .day-box {
 
 article .day-box .date {
     margin: 0px;
-    padding: 38px 0px 0px 15px;
+    padding: 14px 0px 0px 15px;
     color: #7f7f7f;
 }
 
-article h2 {
+article .day-box a { color: black; text-decoration: none; }
+article .day-box a:active { color: black; }
+article .day-box a:visited { color: black; }
+article .day-box .date a { color: #7f7f7f; text-decoration: none; }
+article .day-box .date a:active { color: #7f7f7f; }
+article .day-box .date a:visited { color: #7f7f7f; }
+
+article h3 {
     font-family:albaFont;
-    font-size: 1.8em;
-    margin: 20px 0px 5px 0px;
+    font-size: 1.5em;
+    margin: 0px
 }
 
 section.event {
-    padding: 15px 0px 15px 0px;
+    padding: 10px 0px 10px 0px;
+}
+section.event .event-name {
+    display: flex;
 }
 
-section p,h3 {
-    margin: 0;
+section.event-name h4 {
+    font-size: 1.3em;
+    margin: 0px 0px 5px 0px;
     padding: 0;
 }
 
+section.event .event-name a {
+    color: black;
+    text-decoration: none;
+}
+section.event .event-name a:active { color: black; }
+section.event .event-name a:visited { color: black; }
+
 section.event .event-details .description {
-    padding: 5px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
+    padding: 0px;
 }
 
-section.event .event-details .website img {
-    height: 20px;
+section.event .event-address {
+    display: flex;
 }
 
 section.event .event-details .addr {
+    margin: 0px;
+    padding: 0px;
+    font-size: .9em;
     color: #7f7f7f;
 }
 
-
-.icons {
-    display: flex;
-    margin-top: 8px;
-}
-
-.icon {
-    margin-right: 20px;
-    height: 25px;
+section.event .event-address img {
+    margin: 0px 10px 0px 0px;
+    padding: 0px;
+    height: 22px;
 }
 
 @media only screen and (max-width: 640px) {
@@ -96,31 +139,30 @@ section.event .event-details .addr {
         width: 90%;
     }
 
+    h2 {
+        font-size: 1.125em;
+    }
+
     article .day-box .date {
-        padding: 32px 0px 0px 15px;
+        padding: 10px 0px 0px 15px;
     }
 
-    article .day-box .short-day {
-        padding-top: 37px;
+    section.event-name img {
+        margin: 1px 0px 0px 10px;
+        width: 13px;
     }
 
-    section.event .event-details .address-icons {
-        display: flex;
+    section.event .event-address a {
+        width: 8%;
     }
 
-    section.event .event-details .website {
-        margin-left: 15px;
-        padding-left: 5px;
-    }
-
-    .icons {
+    section.event .event-address img {
         margin: 0px;
+        padding: 0px;
+        height: 20px;
     }
 
-    .icon {
-        margin-left: 20px;
-        margin-right: 0px;
-        height: 25px;
+    section.event .event-address .addr {
+        width: 80%
     }
-
 }

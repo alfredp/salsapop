@@ -22,4 +22,8 @@ class HtmlUtil {
         def rs = vEvent.calculateRecurrenceSet(new Period(new DateTime(date), Duration.ofDays(1)))
         return rs != null && rs.size() > 0
     }
+
+    static String urlFriendlyName(String s) {
+        s.replaceAll(~"[^0-9a-zA-Z]", "-").toLowerCase()
+    }
 }

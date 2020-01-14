@@ -10,10 +10,26 @@
 <header>
     <div class="container">
         <h1>Salsapop!</h1>
-        <strong class="subheader">Dancing in LA/OC/SoCal today</strong>
+        <strong class="tagline">Dancing in LA/OC/SoCal today</strong>
     </div>
 </header>
 <main>
+    <% if(util.printDates) { %>
+    <div class="week-box">
+        <div class="container">
+            <%
+                def firstDay = util.eventDays.head() as java.time.LocalDate
+                def monday = firstDay.minusDays(firstDay.getDayOfWeek().getValue())
+                def sunday = firstDay.plusDays(7 - firstDay.getDayOfWeek().getValue())
+            %>
+            <h2>
+                <a href="/${monday.format("YYYY")}/wk${monday.format("ww")}">
+                    <strong>Week of ${monday.format("MM/dd/YYYY")} - ${sunday.format("MM/dd/YYYY")}</strong>
+                </a>
+            </h2>
+        </div>
+    </div>
+    <% } %>
     <%
         for(day in util.eventDays) {
             day = day as java.time.LocalDate
@@ -21,12 +37,25 @@
     <article>
         <div class="container">
             <div class="day-box">
-                <h2>
-                    ${day.format("EEEE")}
-                </h2>
+                <%
+                    def printDayLink = util.eventDays.size() > 1
+                %>
+                <h3>
+                    <% if(printDayLink) { %>
+                        <a href="/${day.format("YYYY/MM/dd")}">${day.format("EEEE")}</a>
+                    <% } else { %>
+                        ${day.format("EEEE")}
+                    <% } %>
+                </h3>
                 <% if(util.printDates) { %>
                 <p class="date">
-                    <time datetime="${day.format("YYYY-MM-dd")}">${day.format("MMM dd")}</time>
+                    <time datetime="${day.format("YYYY-MM-dd")}">
+                        <% if(printDayLink) { %>
+                            <a href="/${day.format("YYYY/MM/dd")}">${day.format("MM/dd")}</a>
+                        <% } else { %>
+                            ${day.format("MM/dd")}
+                        <% } %>
+                    </time>
                 </p>
                 <% } %>
             </div>
@@ -38,32 +67,22 @@
             %>
             <section class="event">
                 <section class="event-name">
-                    <h3>${vevent.getSummary().getValue()}</h3>
+                    <h4><a target="_blank" href="${vevent.getUrl().getValue()}">${vevent.getSummary().getValue()}</a></h4>
+                    <a target="_blank" href="${vevent.getUrl().getValue()}"><img alt="Website" src="/images/lo.svg"></a>
                 </section>
                 <section class="event-details">
                     <% if(vevent.getDescription()) { %>
-                    <div class="description">
-                        <p>
-                            <em>${vevent.getDescription().getValue()}</em>
-                        </p>
-                    </div>
+                    <p class="description">
+                        <em>${vevent.getDescription().getValue()}</em>
+                    </p>
                     <% } %>
-                    <div class="address-icons">
-                        <p>
-                            <span class="addr">${vevent.getLocation().getValue()}</span>
+                    <div class="event-address">
+                        <a target="_blank" href="https://www.google.com/maps?q=${encodedAddr}">
+                            <img class="icon" alt="Website" src="/images/map.svg">
+                        </a>
+                        <p class="addr">
+                            ${vevent.getLocation().getValue()}
                         </p>
-                        <div class="icons">
-                            <div>
-                                <a target="_blank" href="${vevent.getUrl().getValue()}">
-                                    <img class="icon" alt="Website" src="/images/link.svg">
-                                </a>
-                            </div>
-                            <div>
-                                <a target="_blank" href="https://www.google.com/maps?q=${encodedAddr}">
-                                    <img class="icon" alt="Website" src="/images/map.svg">
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </section>
             </section>
