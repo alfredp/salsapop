@@ -10,13 +10,13 @@
 
 body {
     font-family: codeNewRomanFont, Courier New, Monospace;
-    font-size: 20px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    width: 55%;
+    width: 65%;
     margin: auto;
 }
 
@@ -46,20 +46,24 @@ header .subheader {
     font-size: 1.2em;
 }
 
-.week-box {
-    margin: 0px;
-    padding: 7px 0px 5px 0px;
-    background-color: #d3d3d3;
-}
-
 h2 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin: 0px;
     padding: 0px;
 }
 h2 a { color: black; text-decoration: none; }
 h2 a:active { color: black; }
 h2 a:visited { color: black; }
+
+.week-box {
+    margin: 0px;
+    padding: 7px 0px 5px 0px;
+    background-color: #d3d3d3;
+}
+
+.week-box img {
+    height: 20px;
+}
 
 article {
     margin: 10px 0px 0px 0px;
@@ -84,7 +88,7 @@ article .day-box .date a:visited { color: #7f7f7f; }
 
 article h3 {
     font-family:albaFont;
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin: 0px
 }
 
@@ -130,9 +134,15 @@ section.event .event-address img {
     height: 22px;
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 500px) {
+    .week-box .week-of-txt {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
     body {
-        font-size: 15px;
+        font-size: .85em;
     }
 
     .container {
@@ -140,7 +150,11 @@ section.event .event-address img {
     }
 
     h2 {
-        font-size: 1.125em;
+        font-size: 1.2em;
+    }
+
+    .week-box img {
+        height: 15px;
     }
 
     article .day-box .date {
@@ -148,12 +162,12 @@ section.event .event-address img {
     }
 
     section.event-name img {
-        margin: 1px 0px 0px 10px;
+        margin: 3px 0px 0px 10px;
         width: 13px;
     }
 
     section.event .event-address a {
-        width: 8%;
+        margin-right: 5px;
     }
 
     section.event .event-address img {
@@ -162,7 +176,4 @@ section.event .event-address img {
         height: 20px;
     }
 
-    section.event .event-address .addr {
-        width: 80%
-    }
 }

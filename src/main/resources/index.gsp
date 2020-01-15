@@ -24,7 +24,8 @@
             %>
             <h2>
                 <a href="/${monday.format("YYYY")}/wk${monday.format("ww")}">
-                    <strong>Week of ${monday.format("MM/dd/YYYY")} - ${sunday.format("MM/dd/YYYY")}</strong>
+                    <strong><span class="week-of-txt">Week of </span>${monday.format("MM/dd/YYYY")} - ${sunday.format("MM/dd/YYYY")}</strong>
+                    <img alt="Go" src="/images/lo.svg">
                 </a>
             </h2>
         </div>
