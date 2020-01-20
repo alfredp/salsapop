@@ -1,3 +1,6 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 plugins {
     id 'groovy'
     id 'application'
@@ -63,7 +66,8 @@ task makeSitemap {
         o.withWriter { w ->
             f.eachFileRecurse { x ->
                 if (x.isFile() && x.getName().endsWith("html")) {
-                    w.println("http://www.salsapop.com/" + x.getName())
+                    def p = Pattern.compile(".+" + htmlOutputRoot)
+                    w.println("http://www.salsapop.com" + x.getPath().replaceFirst(p, ""))
                 }
             }
         }

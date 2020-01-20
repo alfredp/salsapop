@@ -25,19 +25,15 @@ header {
     color: white;
 }
 
-header .container {
-    padding: 5px;
-}
-
 header h1 {
     margin: 0px;
     font-family: albaFont;
-    font-size: 3em;
+    font-size: 3.5em;
 }
 
 header .tagline {
     font-size: .9em;
-    padding-left: 5px;
+    //padding-left: 5px;
 }
 
 header .subheader {
@@ -46,8 +42,11 @@ header .subheader {
     font-size: 1.2em;
 }
 
+header .container {
+    padding-bottom: 5px;
+}
+
 h2 {
-    font-size: 1.4em;
     margin: 0px;
     padding: 0px;
 }
@@ -59,23 +58,41 @@ h2 a:visited { color: black; }
     margin: 0px;
     padding: 7px 0px 5px 0px;
     background-color: #d3d3d3;
+    text-align: center;
 }
 
-.week-box img {
-    height: 20px;
+.day-jump {
+    margin: 0px;
+    padding: 0px;
+    background-color: #d3d3d3;
 }
+
+.day-jump nav ul {
+    padding: 5px;
+    margin: 0px;
+    display: flex;
+    list-style-type: none;
+    font-size: 1.2em;
+}
+
+.day-jump nav li {
+    font-family: albaFont;
+}
+
+.day-jump li a { color: black; text-decoration: none; }
+.day-jump li a:active { color: black; }
+.day-jump li a:visited { color: black; }
 
 article {
     margin: 10px 0px 0px 0px;
 }
 
 article .day-box {
-    display: flex;
+    margin-bottom: 10px;
 }
 
 article .day-box .date {
     margin: 0px;
-    padding: 14px 0px 0px 15px;
     color: #7f7f7f;
 }
 
@@ -87,9 +104,16 @@ article .day-box .date a:active { color: #7f7f7f; }
 article .day-box .date a:visited { color: #7f7f7f; }
 
 article h3 {
-    font-family:albaFont;
-    font-size: 1.6em;
-    margin: 0px
+    text-align: center;
+    margin: 0px;
+    display: flex;
+}
+
+article h3:before, article h3:after {
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 1px solid #000; 
+    margin: auto;
 }
 
 section.event {
@@ -100,7 +124,7 @@ section.event .event-name {
 }
 
 section.event-name h4 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     margin: 0px 0px 5px 0px;
     padding: 0;
 }
@@ -134,15 +158,9 @@ section.event .event-address img {
     height: 22px;
 }
 
-@media only screen and (max-width: 500px) {
-    .week-box .week-of-txt {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 0px) {
     body {
-        font-size: .85em;
+        font-size: 15px;
     }
 
     .container {
@@ -150,20 +168,62 @@ section.event .event-address img {
     }
 
     h2 {
-        font-size: 1.2em;
+        font-size: 1.25em;
+    }
+
+    .day-jump nav li {
+        margin-right: 11%;
+    }
+
+    .week-box .week-of-txt {
+        display: none;
     }
 
     .week-box img {
-        height: 15px;
+        height: 14px;
     }
 
-    article .day-box .date {
-        padding: 10px 0px 0px 15px;
+    h3 {
+        font-size: 1.2em;
     }
 
     section.event-name img {
-        margin: 3px 0px 0px 10px;
-        width: 13px;
+        margin: 1px 0px 0px 10px;
+        height: 13px;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    body {
+        font-size: 17px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .day-jump nav li {
+        margin-right: auto;
+    }
+
+    .week-box .week-of-txt {
+        display: inline;
+    }
+
+    .week-box img {
+        height: 18px;
+    }
+
+    section.event-name img {
+        margin: 2px 0px 0px 10px;
+        height: 15px;
+    }
+}
+
+
+@media only screen and (min-width: 834px) {
+    article .day-box .date {
+        padding: 10px 0px 0px 15px;
     }
 
     section.event .event-address a {
@@ -176,4 +236,10 @@ section.event .event-address img {
         height: 20px;
     }
 
+}
+
+@media only screen and (min-width: 1024px) {
+    .container {
+        width: 614px;
+    }
 }

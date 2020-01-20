@@ -35,6 +35,19 @@ END:VEVENT
 python3 -m http.server --bind 192.168.1.10 9000
 #+END_SRC
 
+* apache 2 local setup
+
+** /etc/apache2/apache2.conf
+
+#+BEGIN_SRC xml
+<VirtualHost *:80>
+ # This first-listed virtual host is also the default for *:80
+  ServerName www.salsapop.com
+  ServerAlias salsapop.com
+  DocumentRoot "/var/www/salsapop"
+</VirtualHost>
+#+END_SRC
+
 * TODO [0/1]
 - [ ] web hosting
 - [ ] https certificate

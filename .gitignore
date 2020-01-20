@@ -5,3 +5,4 @@
 build
 prototype/doc_root/**
 g_doc_root/**
+t_*

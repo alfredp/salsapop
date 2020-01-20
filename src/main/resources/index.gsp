@@ -1,3 +1,10 @@
+<%
+    def events = util.events.collect { x -> x as net.fortuna.ical4j.model.component.VEvent }
+    def eventDays = util.eventDays.collect { x -> x as java.time.LocalDate }
+
+    def printWeekBox = util.printDates && util.eventDays.size() == 1
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +21,7 @@
     </div>
 </header>
 <main>
-    <% if(util.printDates) { %>
+    <% if(printWeekBox) { %>
     <div class="week-box">
         <div class="container">
             <%
@@ -30,39 +37,44 @@
             </h2>
         </div>
     </div>
+    <% } else { %>
+    <div class="day-jump">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#monday">M</a></li>
+                    <li><a href="#tuesday">T</a></li>
+                    <li><a href="#wednesday">W</a></li>
+                    <li><a href="#thursday">Th</a></li>
+                    <li><a href="#friday">F</a></li>
+                    <li><a href="#saturday">Sa</a></li>
+                    <li><a href="#sunday">Su</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <% } %>
     <%
-        for(day in util.eventDays) {
-            day = day as java.time.LocalDate
+        for(day in eventDays) {
     %>
     <article>
         <div class="container">
-            <div class="day-box">
+            <section id="${day.format("EEEE").toLowerCase()}" class="day-box">
                 <%
-                    def printDayLink = util.eventDays.size() > 1
+                    def printDayLink = eventDays.size() > 1
                 %>
                 <h3>
-                    <% if(printDayLink) { %>
-                        <a href="/${day.format("YYYY/MM/dd")}">${day.format("EEEE")}</a>
-                    <% } else { %>
-                        ${day.format("EEEE")}
-                    <% } %>
-                </h3>
-                <% if(util.printDates) { %>
-                <p class="date">
                     <time datetime="${day.format("YYYY-MM-dd")}">
                         <% if(printDayLink) { %>
-                            <a href="/${day.format("YYYY/MM/dd")}">${day.format("MM/dd")}</a>
+                            <a href="/${day.format("YYYY/MM/dd")}">${day.format("EEEE, MMM dd, YYYY")}</a>
                         <% } else { %>
-                            ${day.format("MM/dd")}
+                            ${day.format("EEEE, MMM dd, YYYY")}
                         <% } %>
                     </time>
-                </p>
-                <% } %>
-            </div>
+                </h3>
+            </section>
             <%
-                    for(vevent in util.events) {
-                        vevent = vevent as net.fortuna.ical4j.model.component.VEvent
+                    for(vevent in events) {
                         def encodedAddr = java.net.URLEncoder.encode(vevent.getLocation().getValue(), "UTF-8")
                         if(com.salsapop.HtmlUtil.eventOccursOnDay(vevent, day.toDate())) {
             %>
