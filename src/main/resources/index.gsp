@@ -3,20 +3,35 @@
     def eventDays = util.eventDays.collect { x -> x as java.time.LocalDate }
 
     def printWeekBox = util.printDates && util.eventDays.size() == 1
+
+    def getTitle = {
+        if(printWeekBox) {
+            def firstDay = util.eventDays.head() as java.time.LocalDate
+            "Salsapop! | Salsa dancing for ${firstDay.format("EEEE, MMMM DD, YYYY")}"
+        }
+        else if(!util.printDates) {
+            "Salsapop! | Weekly salsa dancing schedule - LA, OC, SoCal"
+        }
+        else {
+            def (monday, sunday) = util.getMondayAndSunday(util.eventDays.head())
+            "Salsapop! | Dancing in LA, OC, SoCal - ${monday.format("MMM DD, YYYY")} to ${sunday.format("MMM DD, YYYY")}"
+        }
+    }
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Salsapop! | Salsa Dancing in Los Angeles, Orange County, and Southern California!</title>
+    <title>${getTitle()}</title>
     <meta charset="UTF-8">
+    <meta name="description" content="Get your salsa dancing fix today in Los Angeles, Orange County, and Southern California!">
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <header>
     <div class="container">
-        <h1>Salsapop!</h1>
+        <h1><a href="/">Salsapop!</a></h1>
         <strong class="tagline">Dancing in LA/OC/SoCal today</strong>
     </div>
 </header>
@@ -25,9 +40,7 @@
     <div class="week-box">
         <div class="container">
             <%
-                def firstDay = util.eventDays.head() as java.time.LocalDate
-                def monday = firstDay.minusDays(firstDay.getDayOfWeek().getValue())
-                def sunday = firstDay.plusDays(7 - firstDay.getDayOfWeek().getValue())
+                def (monday, sunday) = util.getMondayAndSunday(util.eventDays.head())
             %>
             <h2>
                 <a href="/${monday.format("YYYY")}/wk${monday.format("ww")}">
@@ -60,16 +73,26 @@
     <article>
         <div class="container">
             <section id="${day.format("EEEE").toLowerCase()}" class="day-box">
-                <%
-                    def printDayLink = eventDays.size() > 1
-                %>
                 <h3>
                     <time datetime="${day.format("YYYY-MM-dd")}">
-                        <% if(printDayLink) { %>
+                        <%
+                            if(util.printDates) {
+                                def printDayLink = eventDays.size() > 1
+                                if(printDayLink) {
+                        %>
                             <a href="/${day.format("YYYY/MM/dd")}">${day.format("EEEE, MMM dd, YYYY")}</a>
-                        <% } else { %>
+                        <%
+                                } else { %>
                             ${day.format("EEEE, MMM dd, YYYY")}
-                        <% } %>
+                        <%
+                                }
+                            }
+                            else {
+                        %>
+                            ${day.format("EEEE")}
+                        <%
+                            }
+                        %>
                     </time>
                 </h3>
             </section>

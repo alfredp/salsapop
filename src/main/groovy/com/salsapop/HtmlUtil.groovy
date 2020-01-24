@@ -26,4 +26,10 @@ class HtmlUtil {
     static String urlFriendlyName(String s) {
         s.replaceAll(~"[^0-9a-zA-Z]", "-").toLowerCase()
     }
+
+    static def getMondayAndSunday(LocalDate d) {
+        def monday = d.minusDays(d.getDayOfWeek().getValue() - 1)
+        def sunday = d.plusDays(7 - d.getDayOfWeek().getValue())
+        return [monday, sunday]
+    }
 }

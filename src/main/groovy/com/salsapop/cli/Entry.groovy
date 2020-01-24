@@ -1,6 +1,7 @@
 package com.salsapop.cli
 
 import com.salsapop.HtmlUtil
+import groovy.cli.commons.CliBuilder
 import groovy.text.GStringTemplateEngine
 import net.fortuna.ical4j.model.component.VEvent
 import net.fortuna.ical4j.util.Calendars
@@ -12,17 +13,27 @@ class Entry {
     static def indexTemplate = new File(Entry.class.getResource("/index.gsp").toURI()).getText()
 
     static void main(String[] args) {
-        assert args[0]
-        assert args[1]
+        def cli = getCliParser()
+        def opts = cli.parse(args)
 
-        def icsFile = new File(args[0])
-        def outputRoot = args[1]
+        if(!opts) System.exit(-1)
+
+        def icsFile = new File(opts.recurringCal)
+        def outputRoot = opts.outputDir
 
         def cal = Calendars.load(icsFile.toURI().toURL())
         def events = cal.getComponents("VEVENT").collect{ e -> e as VEvent}
 
         printWeeksAndDays(events, outputRoot)
         printDefaultIndex(events, outputRoot)
+    }
+
+    static def getCliParser() {
+        def cli = new CliBuilder(usage: 'java -jar salsapop.jar')
+        cli.r(longOpt: 'recurringCal', args: 1, required: true, 'path to recurring events ICS file')
+        cli.f(longOpt: 'oneOffs', args: 1, 'path to one off events ICS file')
+        cli.o(longOpt: 'outputDir', args: 1, required: true, 'output directory')
+        return cli
     }
 
     static def makeDays(int n) {

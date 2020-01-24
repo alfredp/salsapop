@@ -1,4 +1,3 @@
-import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 plugins {
@@ -30,7 +29,7 @@ application {
 
 ext {
     defaultCalendar = "salsapop.ics"
-    htmlOutputRoot = "g_doc_root"
+    htmlOutputRoot = "/tmp/salsapop_html"
 }
 
 task generateHtml(type: JavaExec) {
@@ -50,17 +49,11 @@ task generateHtml(type: JavaExec) {
     }
     classpath = sourceSets.main.runtimeClasspath
     main = application.mainClassName
-    args defaultCalendar,htmlOutputRoot
+    args "-r", defaultCalendar, "-o", htmlOutputRoot
 }
 
-run.doFirst {
-    args[0] = "salsapop.ics"
-    args[1] = htmlOutputRoot
-}
-
-task makeSitemap {
+task makeSitemap(dependsOn: generateHtml) {
     doLast {
-        mkdir(htmlOutputRoot)
         def f = file(htmlOutputRoot)
         def o = file("${htmlOutputRoot}/sitemap.txt")
         o.withWriter { w ->
