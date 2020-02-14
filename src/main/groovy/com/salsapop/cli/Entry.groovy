@@ -24,8 +24,13 @@ class Entry {
         def cal = Calendars.load(icsFile.toURI().toURL())
         def events = cal.getComponents("VEVENT").collect{ e -> e as VEvent}
 
-        printWeeksAndDays(events, outputRoot)
-        printDefaultIndex(events, outputRoot)
+        if(opts.indexOnly) {
+            printDefaultIndex(events, outputRoot)
+        }
+        else {
+            printWeeksAndDays(events, outputRoot)
+            printDefaultIndex(events, outputRoot)
+        }
     }
 
     static def getCliParser() {
@@ -33,6 +38,7 @@ class Entry {
         cli.r(longOpt: 'recurringCal', args: 1, required: true, 'path to recurring events ICS file')
         cli.f(longOpt: 'oneOffs', args: 1, 'path to one off events ICS file')
         cli.o(longOpt: 'outputDir', args: 1, required: true, 'output directory')
+        cli.i(longOpt: 'indexOnly', 'generate the default index file only')
         return cli
     }
 
@@ -100,7 +106,7 @@ class Entry {
     static def printDefaultIndex(List<VEvent> events, String outputRoot) {
         def weeklyEventsOnly = events.findAll { e -> e.getProperty("RRULE").getValue().contains("WEEKLY") }
         def sevenDays = makeDays(7)
-        def outFile = new File("${outputRoot}/weekly.html")
+        def outFile = new File("${outputRoot}/index.html")
         def html = gte.createTemplate(indexTemplate)
                 .make(['util': new HtmlUtil(sevenDays, weeklyEventsOnly)]).toString()
         outFile.withWriter { it.println(html) }

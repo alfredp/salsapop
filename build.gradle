@@ -32,28 +32,46 @@ ext {
     htmlOutputRoot = "/tmp/salsapop_html"
 }
 
-task generateHtml(type: JavaExec) {
-    dependsOn build
-    doFirst {
-        println "Purging ${htmlOutputRoot}..."
-        delete htmlOutputRoot
-        println "Creating ${htmlOutputRoot}..."
-        mkdir htmlOutputRoot
-    }
+task cleanOutput {
     doLast {
+        println "Purging ${htmlOutputRoot}..."
+        delete file(htmlOutputRoot)
+        println "Creating ${htmlOutputRoot}..."
+        mkdir file(htmlOutputRoot)
+    }
+}
+
+task copyStylesAndImages {
+    doLast {
+        println "Copying styles and images to ${htmlOutputRoot}"
         copy {
             from "prototype"
             into htmlOutputRoot
             exclude "**/*.html"
         }
     }
-    classpath = sourceSets.main.runtimeClasspath
-    main = application.mainClassName
-    args "-r", defaultCalendar, "-o", htmlOutputRoot
 }
 
-task makeSitemap(dependsOn: generateHtml) {
+task generateIndexOnly(type: JavaExec) {
     doLast {
+        classpath = sourceSets.main.runtimeClasspath
+        main = application.mainClassName
+        args "-r", defaultCalendar, "-o", htmlOutputRoot, "-i"
+    }
+}
+
+task generateAll(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = application.mainClassName
+    doFirst {
+        println "Generating all HTML under ${htmlOutputRoot}"
+        args "-r", defaultCalendar, "-o", htmlOutputRoot
+    }
+}
+
+task generateSitemap(dependsOn: generateAll) {
+    doLast {
+        println "Generating sitemap under ${htmlOutputRoot}"
         def f = file(htmlOutputRoot)
         def o = file("${htmlOutputRoot}/sitemap.txt")
         o.withWriter { w ->
@@ -64,5 +82,22 @@ task makeSitemap(dependsOn: generateHtml) {
                 }
             }
         }
+    }
+}
+
+task fullGenerate {
+    copyStylesAndImages.mustRunAfter(cleanOutput)
+    generateAll.mustRunAfter(cleanOutput)
+    generateSitemap.mustRunAfter(generateAll)
+    dependsOn cleanOutput, copyStylesAndImages, generateAll, generateSitemap
+    doLast {
+        println "Full generation complete!"
+    }
+}
+
+task fullGenerateForLocal {
+    dependsOn fullGenerate
+    doFirst {
+        htmlOutputRoot = "/var/www/salsapop"
     }
 }

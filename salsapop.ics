@@ -98,7 +98,7 @@ END:VEVENT
 BEGIN:VEVENT
 DTSTAMP:20200104T032923Z
 UID:9badcfe1-e8f5-460a-9a2c-c2b6e871850c
-SUMMARY:Fuego Salsa & Bachata
+SUMMARY:Fuego Cocina and Cantina
 LOCATION:Fuego Cocina and Cantina\, 205 E 2nd St\, Pomona\, CA 91766
 URL:https://www.facebook.com/Fuego-Salsa-Bachata-2209854245914593
 DTSTART;TZID=Pacific:20200103T213000
@@ -136,16 +136,6 @@ LOCATION:The Granada\, 17 S 1st St\, Alhambra\, CA 91801
 URL:https://www.instagram.com/thegranadala
 DTSTART;TZID=Pacific:20200103T213000
 RRULE:FREQ=WEEKLY;BYDAY=FR,SA
-END:VEVENT
-
-BEGIN:VEVENT
-DTSTAMP:20200104T032923Z
-UID:ebf25a09-c8de-4e07-9ffb-eace29c4023d
-SUMMARY:Groove Lounge
-LOCATION:Oxygen Tango\, 122 S Market St\, Inglewood\, CA 90301
-URL:https://www.facebook.com/groups/GrooveLoungeMambo
-DTSTART;TZID=Pacific:20200108T210000
-RRULE:FREQ=WEEKLY;BYDAY=WE
 END:VEVENT
 
 BEGIN:VEVENT
@@ -254,9 +244,137 @@ SUMMARY:PCH Club
 DESCRIPTION:SalsaInLongBeach
 LOCATION:Golden Sails Hotel\, 6285 E Pacific Coast Hwy\, Long Be
  ach\, CA 90803
-URL:https://www.facebook.com/salsainlongbeach
+URL:http://www.salsainlongbeach.com/calendar.php
 DTSTART;TZID=Pacific:20200106T220000
 RRULE:FREQ=WEEKLY;BYDAY=MO,TH
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:c85e9b10-9ba1-47d7-a31f-9398bc4deceb
+SUMMARY:Rain
+DESCRIPTION:Salsa Thursday's
+LOCATION:Rain Bar and Lounge\, 12215 Ventura Blvd #211\, Stu
+ dio City\, CA 91604
+URL: https://www.instagram.com/salsathursdaysla
+DTSTART;TZID=Pacific:20200109T220000
+RRULE:FREQ=WEEKLY;BYDAY=TH
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:baa78a5e-ceae-43c2-9f74-dd955f4340d6
+SUMMARY:Senator Jones
+DESCRIPTION:Hosted by Nights of Dance 
+LOCATION:Senator Jones\, 2020 Wilshire Blvd\, Santa Mo
+ nica\, CA 90403
+URL:https://www.instagram.com/nightsofdance
+DTSTART;TZID=Pacific:20200107T220000
+RRULE:FREQ=WEEKLY;BYDAY=TU
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:c501c2eb-97ac-491b-a38a-3254ddd43b2a
+SUMMARY:Schooner Bar & Grill
+DESCRIPTION:Noche Tropical - Salsa and Bachata Night
+LOCATION:Schooner Bar & Grill\, 2701 190th St #100\, Redo
+ ndo Beach\, CA 90278
+URL:https://www.facebook.com/IMDanceHappyStudios
+DTSTART;TZID=Pacific:20200110T220000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:0306432c-eae8-42c2-904e-ccc4dd622fb5
+SUMMARY:Sonata Room
+DESCRIPTION:Dance social salsa/bachata
+LOCATION:Sonata Room\, 210 N First Ave\, Arcadia\, CA 91006
+URL:http://www.sonataroom.com/calendar
+DTSTART;TZID=Pacific:20200111T220000
+RRULE:FREQ=MONTHLY;BYDAY=2SA,4SA
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:642fbc27-1d4e-4ca7-b424-1cc3bd6ea37a
+SUMMARY:Steven's Steak & Seafood House
+DESCRIPTION:LA's most famous salsa/bachata night
+LOCATION:Steven's Steak & Seafood House\, 5332 Stevens Pl\, Comm
+ erce\, CA 90040
+URL:https://www.facebook.com/Salsa-and-Bachata-Nights-
+ at-SSH-269289803099343
+DTSTART;TZID=Pacific:20200112T200000
+RRULE:FREQ=WEEKLY;BYDAY=SU
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:14a75e7e-1d28-4a0f-aa59-0b1949019ee1
+SUMMARY:3rd Street Dance
+DESCRIPTION:Latin social (salsa/bachata/kizomba)
+LOCATION:3rd Street Dance\, 8558 W 3rd St\, Los Angeles\, CA 90048
+URL:https://www.thirdstreetdance.com/socials
+DTSTART;TZID=Pacific:20200118T200000
+RRULE:FREQ=MONTHLY;BYDAY=3SA
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:344f5500-47ab-43c1-bf37-5e44e70129cd
+SUMMARY:Unified On2 Social
+DESCRIPTION:On1\, On2\, Bachata\, Zouk
+LOCATION:Avant Garde Ballroom\, 1502 E Warner Ave\, Santa Ana\, CA 92705
+URL:https://www.facebook.com/unifiedon2social
+DTSTART;TZID=Pacific:20200125T200000
+RRULE:FREQ=MONTHLY;BYDAY=4SA
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:0a02ffd4-b102-4acc-bd68-b334bb7aa678
+SUMMARY:VLounge
+DESCRIPTION:Salsa/bachata Tuesday\, Latin Sunday
+LOCATION:VLounge Bar And Night Club\, 6101 Reseda Blvd\, Tar
+ zana\, CA 91335
+URL:https://www.facebook.com/pg/SalserosLA/events
+DTSTART;TZID=Pacific:20200107T200000
+RRULE:FREQ=WEEKLY;BYDAY=TU,SU
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:bf567fbc-0972-4cfc-9baa-33381d974716
+SUMMARY:The Warehouse Restaurant
+DESCRIPTION:Salsa & Bachata Friday's
+LOCATION:The Warehouse Restaurant\, 4499 Admiralty Way\, Mar
+ ina Del Rey\, CA 90292
+URL:https://www.instagram.com/thewarehouserestaurant
+DTSTART;TZID=Pacific:20200110T200000
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:348653f5-5e89-4812-8f18-5c02cc6df361
+SUMMARY:Lumina Academy
+LOCATION:Lumina Academy\, 1052 Allen Ave\, Pasadena\, CA 91104
+URL:https://www.facebook.com/ArlenetheSalsaQueen
+DTSTART;TZID=Pacific:20200110T200000
+RRULE:FREQ=MONTHLY;BYDAY=2FR
+END:VEVENT
+
+BEGIN:VEVENT
+DTSTAMP:20200104T032923Z
+UID:6a85e240-6db1-47ed-816c-b9c6dcd4919f
+SUMMARY:Riviera 31
+DESCRIPTION:Salsa Night
+LOCATION:Sofitel Los Angeles at Beverly Hills\, 8555 Bever
+ ly Blvd\, Los Angeles\, CA 90048
+URL:https://www.facebook.com/events/823084704804268
+DTSTART;TZID=Pacific:20200108T220000
+RRULE:FREQ=WEEKLY;BYDAY=WE
 END:VEVENT
 
 END:VCALENDAR

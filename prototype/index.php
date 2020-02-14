@@ -1,5 +1,5 @@
 <?php
-    $d = new DateTime();
+    $d = new DateTime(null, new DateTimeZone('America/Los_Angeles'));
     header("Location: " . $d->format("/Y/") . "wk" . date("W"), true, 302);
 
 //    echo $d->sub(new DateInterval(sprintf("P%dD",$d->format("w"))));
